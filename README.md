@@ -12,6 +12,6 @@ Install
 Usage
 -----
 
-    take_the_stage
+    take_the_stage sinatra
 
 Wow, that was easy.
