@@ -2,7 +2,7 @@ Sinatra Bootstrap
 =================
 
 Get a skeleton sinatra app up and running before you finish wishing you
-an idea
+had an idea
 
 Install
 -------
