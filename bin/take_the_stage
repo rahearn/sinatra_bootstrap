@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'sinatra_bootstrap'
+
+SinatraBootstrap::Stage.start
