@@ -3,7 +3,7 @@ require 'spec_helper'
 describe SinatraBootstrap::Stage do
 
   describe "#sinatra" do
-    let(:sinatra) { described_class.start(['sinatra']) }
+    let(:sinatra) { described_class.start ['sinatra'] }
 
     it "outputs the instructions for starting sinatra" do
       Thor::Actions::CreateFile.stub(:new).and_return stub :invoke! => true
@@ -35,6 +35,35 @@ describe SinatraBootstrap::Stage do
       in_tmpdir do
         capture(:stdout) { sinatra }
         File.exists?('main.rb').should be_true
+      end
+    end
+
+    it "does not copy config.ru" do
+      in_tmpdir do
+        capture(:stdout) { sinatra }
+        File.exists?('config.ru').should be_false
+      end
+    end
+
+    context "with --rackup" do
+      let(:sinatra) { described_class.start ['sinatra', '--rackup'] }
+
+      it "copies config.ru" do
+        in_tmpdir do
+          capture(:stdout) { sinatra }
+          File.exists?('config.ru').should be_true
+        end
+      end
+    end
+
+    context "with --no-rackup" do
+      let(:sinatra) { described_class.start ['sinatra', '--no-rackup'] }
+
+      it "does not copy config.ru" do
+        in_tmpdir do
+          capture(:stdout) { sinatra }
+          File.exists?('config.ru').should be_false
+        end
       end
     end
   end
