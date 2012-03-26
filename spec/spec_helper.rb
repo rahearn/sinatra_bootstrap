@@ -5,11 +5,11 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-# require 'simplecov'
-# SimpleCov.start do
-#   add_group 'Libraries', 'lib'
-#   add_group 'Specs', 'spec'
-# end
+require 'simplecov'
+SimpleCov.start do
+  add_group 'Libraries', 'lib'
+  add_group 'Specs', 'spec'
+end
 
 $:.unshift(File.join(File.dirname(__FILE__), '..' 'lib'))
 require 'sinatra_bootstrap'
