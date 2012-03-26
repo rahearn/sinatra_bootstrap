@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name         = 'sinatra_bootstrap'
 
-  s.version      = '0.0.1'
-  s.date         = '2012-03-21'
+  s.version      = '0.1.0'
+  s.date         = '2012-03-25'
 
   s.platform     = Gem::Platform::RUBY
   s.license      = 'MIT'
