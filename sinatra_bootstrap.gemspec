@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.description  = 'Quick Sinatra app setup'
 
   s.files        = `git ls-files -- lib/*`.split("\n")
+  s.files       += %W[README.md]
   s.test_files   = `git ls-files -- spec/*`.split("\n")
   s.executables  = `git ls-files -- bin/*`.split("\n").map { |f| File.basename f }
   s.require_path = 'lib'
