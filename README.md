@@ -1,7 +1,7 @@
 Sinatra Bootstrap
 =================
 
-Get a skeleton sinatra app up and running before you finish wishing you
+Get a skeleton [sinatra](http://www.sinatrarb.com/) app up and running before you finish wishing you
 had an idea
 
 Install
@@ -26,3 +26,11 @@ hold your application.
 
 The `rackup` variant will also generate a `config.ru` file suitable for
 deploying your application on a Rack-based server.
+
+### Heroku
+
+    take_the_stage heroku
+
+When passed `heroku` sinatra bootstrap will generate a more complete
+`Gemfile` containing [thin](http://code.macournoyer.com/thin/),
+[heroku](https://github.com/heroku/heroku), and [foreman](https://github.com/ddollar/foreman). It also outputs a simple `config.ru` and `Procfile`

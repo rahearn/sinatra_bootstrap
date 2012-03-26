@@ -19,6 +19,16 @@ module SinatraBootstrap
       say '  ruby ./main.rb'
     end
 
+    desc 'heroku', 'Install base files for running Sinatra on Heroku'
+    def heroku
+      copy_file 'Gemfile-heroku', 'Gemfile'
+      copy_file 'config.ru'
+      copy_file 'Procfile'
+      copy_file 'main.rb'
+      say 'Simple development startup:'
+      say '  bundle install'
+      say '  foreman start'
+    end
   end
 
 end
