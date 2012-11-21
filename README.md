@@ -27,6 +27,8 @@ hold your application.
 The `rackup` variant will also generate a `config.ru` file suitable for
 deploying your application on a Rack-based server.
 
+The optional `pow` variant may be added to generate a `tmp/always_restart.txt` to configure pow.cx to restart the server after each request.
+
 ### Heroku
 
     take_the_stage heroku
