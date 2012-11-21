@@ -66,6 +66,17 @@ describe SinatraBootstrap::Stage do
         end
       end
     end
+
+    context "with --pow" do
+      let(:sinatra) { described_class .start ['sinatra', '--pow'] }
+
+      it "creates tmp/always_restart.txt" do
+        in_tmpdir do
+          capture(:stdout) { sinatra }
+          File.exists?('tmp/always_restart.txt').should be_true
+        end
+      end
+    end
   end
 
   describe "#heroku" do
@@ -115,6 +126,17 @@ describe SinatraBootstrap::Stage do
       in_tmpdir do
         capture(:stdout) { sinatra }
         File.exists?('Procfile').should be_true
+      end
+    end
+
+    context "with --pow" do
+      let(:sinatra) { described_class .start ['heroku', '--pow'] }
+
+      it "creates tmp/always_restart.txt" do
+        in_tmpdir do
+          capture(:stdout) { sinatra }
+          File.exists?('tmp/always_restart.txt').should be_true
+        end
       end
     end
   end
