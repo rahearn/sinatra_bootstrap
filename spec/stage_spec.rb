@@ -6,7 +6,7 @@ describe SinatraBootstrap::Stage do
     let(:sinatra) { described_class.start ['sinatra'] }
 
     it "outputs the instructions for starting sinatra" do
-      Thor::Actions::CreateFile.stub(:new).and_return stub :invoke! => true
+      Thor::Actions::CreateFile.stub(:new).and_return double :invoke! => true
       stdout = capture(:stdout) { sinatra }
       stdout.should =~ /Simple startup:/
       stdout.should =~ /  bundle install/
@@ -83,7 +83,7 @@ describe SinatraBootstrap::Stage do
     let(:sinatra) { described_class.start ['heroku'] }
 
     it "outputs the instructions for starting foreman" do
-      Thor::Actions::CreateFile.stub(:new).and_return stub :invoke! => true
+      Thor::Actions::CreateFile.stub(:new).and_return double :invoke! => true
       stdout = capture(:stdout) { sinatra }
       stdout.should =~ /Simple development startup:/
       stdout.should =~ /  bundle install/
