@@ -16,7 +16,7 @@ describe SinatraBootstrap::Stage do
     it "creates a Gemfile" do
       in_tmpdir do
         capture(:stdout) { sinatra }
-        File.exists?('Gemfile').should be_true
+        File.exists?('Gemfile').should be true
       end
     end
 
@@ -34,14 +34,14 @@ describe SinatraBootstrap::Stage do
     it "copies main.rb" do
       in_tmpdir do
         capture(:stdout) { sinatra }
-        File.exists?('main.rb').should be_true
+        File.exists?('main.rb').should be true
       end
     end
 
     it "does not copy config.ru" do
       in_tmpdir do
         capture(:stdout) { sinatra }
-        File.exists?('config.ru').should be_false
+        File.exists?('config.ru').should be false
       end
     end
 
@@ -51,7 +51,7 @@ describe SinatraBootstrap::Stage do
       it "copies config.ru" do
         in_tmpdir do
           capture(:stdout) { sinatra }
-          File.exists?('config.ru').should be_true
+          File.exists?('config.ru').should be true
         end
       end
     end
@@ -62,7 +62,7 @@ describe SinatraBootstrap::Stage do
       it "does not copy config.ru" do
         in_tmpdir do
           capture(:stdout) { sinatra }
-          File.exists?('config.ru').should be_false
+          File.exists?('config.ru').should be false
         end
       end
     end
@@ -73,7 +73,7 @@ describe SinatraBootstrap::Stage do
       it "creates tmp/always_restart.txt" do
         in_tmpdir do
           capture(:stdout) { sinatra }
-          File.exists?('tmp/always_restart.txt').should be_true
+          File.exists?('tmp/always_restart.txt').should be true
         end
       end
     end
@@ -93,7 +93,7 @@ describe SinatraBootstrap::Stage do
     it "creates a Gemfile" do
       in_tmpdir do
         capture(:stdout) { sinatra }
-        File.exists?('Gemfile').should be_true
+        File.exists?('Gemfile').should be true
       end
     end
 
@@ -111,21 +111,21 @@ describe SinatraBootstrap::Stage do
     it "copies main.rb" do
       in_tmpdir do
         capture(:stdout) { sinatra }
-        File.exists?('main.rb').should be_true
+        File.exists?('main.rb').should be true
       end
     end
 
     it "copies config.ru" do
       in_tmpdir do
         capture(:stdout) { sinatra }
-        File.exists?('config.ru').should be_true
+        File.exists?('config.ru').should be true
       end
     end
 
     it "copies Procfile" do
       in_tmpdir do
         capture(:stdout) { sinatra }
-        File.exists?('Procfile').should be_true
+        File.exists?('Procfile').should be true
       end
     end
 
@@ -135,7 +135,7 @@ describe SinatraBootstrap::Stage do
       it "creates tmp/always_restart.txt" do
         in_tmpdir do
           capture(:stdout) { sinatra }
-          File.exists?('tmp/always_restart.txt').should be_true
+          File.exists?('tmp/always_restart.txt').should be true
         end
       end
     end

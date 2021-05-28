@@ -10,6 +10,7 @@ SimpleCov.start do
   add_group 'Libraries', 'lib'
   add_group 'Specs', 'spec'
 end
+require 'tmpdir'
 
 $:.unshift(File.join(File.dirname(__FILE__), '..' 'lib'))
 require 'sinatra_bootstrap'
